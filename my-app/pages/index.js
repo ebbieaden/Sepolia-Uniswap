@@ -313,6 +313,8 @@ export default function Home() {
   /**
    * renderButton: Returns a button based on the state of the dapp
    */
+   * renderButton: Returns a button based on the state of the dapp
+   */
   const renderButton = () => {
     // If wallet is not connected, return a button which allows them to connect to their wallet
     if (!walletConnected) {
@@ -328,7 +330,7 @@ export default function Home() {
         return <button className={styles.button}>Loading...</button>;
       }
 
-    if (setLiquidityTab) {
+    if (LiquidityTab) {
       return (
         <div>
           <div className={styles.description}>
@@ -336,7 +338,7 @@ export default function Home() {
             <br/>
             {utils.formatEther(ethBalance)} Ether
             <br/>
-            {utils.parseEther(lpBalance)} Crypto Dev LP Tokens
+            {utils.formatEther(lpBalance)} Crypto Dev LP Tokens
           </div>
           <div>
             {/**If reserved CD is zero, render the state for liquidity where we ask the user how much initial liquidity
