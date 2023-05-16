@@ -329,7 +329,7 @@ export default function Home() {
         return <button className={styles.button}>Loading...</button>;
       }
 
-    if (LiquidityTab) {
+    if (liquidityTab) {
       return (
         <div>
           <div className={styles.description}>
